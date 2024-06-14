@@ -1,34 +1,61 @@
 from django.db import models
-from datetime import datetime
+from datetime import datetime, timedelta
 from django.utils import timezone
 from dateutil.relativedelta import relativedelta
 from django.contrib.auth.hashers import make_password, check_password
 
-class Rol(models.Model): 
-    # Model that represents a Role in the system.
+class TypeUser(models.Model): 
+    # Model that represents a type of user in the system.
     
-    # Field that stores the role name (max 20 characters)
+    # Field that stores the type of user name (max 20 characters)
     name = models.CharField(max_length=20, blank=False, null=False, unique=True)
     
-    # Field that stores the role description (max 100 characters)
+    # Field that stores the type of user description (max 100 characters)
     description = models.CharField(max_length=100, blank=False, null=False, unique=True)
     
-    # Field that stores the role creation date
+    # Field that stores the type of user creation date
     date_create = models.DateTimeField(auto_now_add=True)
     
-    # Field that stores the role last update date
+    # Field that stores the type of user last update date
     date_update = models.DateTimeField(auto_now=True)
     
-    # Field that indicates if the role is active (True) or inactive (False)
+    # Field that indicates if the type of user is active (True) or inactive (False)
     status = models.BooleanField(default=True)
     
     class Meta:
         # Model metadata.
-        db_table = 'roles'  # Table name in the database
+        db_table = 'type_users'  # Table name in the database
     
     def __str__(self):
         # Method that returns a string representation of the object.
-        return self.name  # Returns the role name as a string
+        return self.name  # Returns the type user name as a string
+
+
+class StatusUser(models.Model):
+    # Model that represents a Status of user in the system.
+    
+    # Field that stores the status of user name (max 20 characters)
+    name = models.CharField(max_length=20, blank=False, null=False, unique=True)
+    
+    # Field that stores the status of user description (max 100 characters)
+    description = models.CharField(max_length=100, blank=False, null=False, unique=True)
+    
+    # Field that stores the status of user creation date
+    date_create = models.DateTimeField(auto_now_add=True)
+    
+    # Field that stores the status of user last update date
+    date_update = models.DateTimeField(auto_now=True)
+    
+    # Field that indicates if the status of user is active (True) or inactive (False)
+    status = models.BooleanField(default=True)
+    
+    class Meta:
+        # Model metadata.
+        db_table = 'status_user'  # Table name in the database
+    
+    def __str__(self):
+        # Method that returns a string representation of the object.
+        return self.name  # Returns the status of user name as a string
 
 
 class TypeAccount(models.Model): 
@@ -83,6 +110,33 @@ class StatusAccount(models.Model):
     def __str__(self):
         # Method that returns a string representation of the object.
         return self.name  # Returns the status name as a string
+
+
+class TypeAccount(models.Model): 
+    # Model that represents a Type of Account in the system.
+    
+    # Field that stores the type of account name (max 20 characters)
+    name = models.CharField(max_length=20, blank=False, null=False, unique=True)
+    
+    # Field that stores the type of account description (max 100 characters)
+    description = models.CharField(max_length=100, blank=False, null=False, unique=True)
+    
+    # Field that stores the type of account creation date
+    date_create = models.DateTimeField(auto_now_add=True)
+    
+    # Field that stores the type of account last update date
+    date_update = models.DateTimeField(auto_now=True)
+    
+    # Field that indicates if the type of account is active (True) or inactive (False)
+    status = models.BooleanField(default=True)
+    
+    class Meta:
+        # Model metadata.
+        db_table = 'type_account'  # Table name in the database
+    
+    def __str__(self):
+        # Method that returns a string representation of the object.
+        return self.name  # Returns the type of account name as a string
 
 
 class TypeCard(models.Model): 
@@ -169,8 +223,11 @@ class StatusPointSale(models.Model):
 class User(models.Model): 
     # Model that represents a user in the system.
     
-    # Field that stores the user's role (foreign key to the Rol model)
-    rol_id = models.ForeignKey(Rol, on_delete=models.DO_NOTHING)
+    # Field that stores the user's type (foreign key to the TypeUser model)
+    type_id = models.ForeignKey(TypeUser, on_delete=models.DO_NOTHING)
+    
+    # Foreign key referencing the status of the user (e.g. active, inactive, etc.)
+    status_id = models.ForeignKey(StatusUser, on_delete=models.DO_NOTHING)
     
     # Field that stores the user's username (max 50 characters, unique)
     user_name = models.CharField(max_length=50, blank=False, null=False, unique=True)
@@ -202,6 +259,9 @@ class User(models.Model):
     # Field that stores the user's creation date
     date_create = models.DateTimeField(auto_now_add=True)
     
+    # field that records the time in which the user will be blocked
+    blocking_time = models.DateTimeField(blank=True, null=True)
+    
     # Field that stores the user's last update date
     date_update = models.DateTimeField(auto_now=True)
     
@@ -219,9 +279,19 @@ class User(models.Model):
         # Method that checks if the provided password is valid.
         return check_password(raw_password, self.password)
     
-    def is_expired(self):
+    def is_password_expired(self):
         # Method that checks if the user's password has expired.        
         return self.date_due_password >= timezone.now().date()
+    
+    def block(self):
+        # Method that block an user when for 3 days
+        if self.blocking_time != None:
+            self.blocking_time = datetime.now() + timedelta(days=3)
+    
+    def unlock(self):
+        # Method that unlock an user
+        if self.blocking_time >= timezone.now().date():
+            self.blocking_time = None
     
     def __str__(self):
         # Method that returns a string representation of the object.
@@ -250,6 +320,9 @@ class Account(models.Model):
     # Current balance of the account
     balance = models.FloatField(default=0)
     
+    # field that records the time in which the user will be blocked
+    blocking_time = models.DateTimeField(blank=True, null=True)
+    
     # Timestamp when the account was created
     date_create = models.DateTimeField(auto_now_add=True)
     
@@ -259,6 +332,16 @@ class Account(models.Model):
     class Meta:
         # Database table name for this model
         db_table = 'accounts'
+    
+    def block(self):
+        # Method that block an user when for 3 days
+        if self.blocking_time != None:
+            self.blocking_time = datetime.now() + timedelta(days=3)
+    
+    def unlock(self):
+        # Method that unlock an user
+        if self.blocking_time >= timezone.now().date():
+            self.blocking_time = None
     
     def __str__(self):
         # Returns a string representation of the account
@@ -289,31 +372,28 @@ class Card(models.Model):
     # Date when the card password is due to expire
     date_due_password = models.DateTimeField(default=datetime.now() + relativedelta(months=6))
     
+    # field that records the time in which the user will be blocked
+    blocking_time = models.DateTimeField(blank=True, null=True)
+    
     # Timestamp when the card was created
     date_create = models.DateTimeField(auto_now_add=True)
     
     # Timestamp when the card was last updated
     date_update = models.DateTimeField(auto_now=True)
     
-    class Meta:
-        # Database table name for this model
-        db_table = 'cards'
+    def block(self):
+        # Method that block an account when for 3 days
+        if self.blocking_time != None:
+            self.blocking_time = datetime.now() + timedelta(days=3)
     
-    def set_password(self, raw_password):
-        # Sets the password for the card.
-        self.password = make_password(raw_password)
-        
-    def valid_password(self, raw_password):
-        # Checks if the provided password is valid for the card.
-        return check_password(raw_password, self.password)
-    
-    def is_expired(self):
-        # Checks if the card password has expired.
-        return self.date_due_password >= timezone.now().date()
+    def unlock(self):
+        # Method that unlock an account
+        if self.blocking_time >= timezone.now().date():
+            self.blocking_time = None
     
     def __str__(self):
-        # Returns a string representation of the card
-        return f"{self.account_id.user_id.user_name} - {self.card_number}"
+        # Returns a string representation of the account
+        return f"{self.account_id.user_id.user_name} - {self.account_number}"
 
 
 class PointSale(models.Model): 
@@ -328,6 +408,9 @@ class PointSale(models.Model):
     # Unique identifier for the POS
     point_sale_number = models.CharField(max_length=20, blank=False, null=False, unique=True)
     
+    # field that records the time in which the user will be blocked
+    blocking_time = models.DateTimeField(blank=True, null=True)
+    
     # Timestamp when the POS was created
     date_create = models.DateTimeField(auto_now_add=True)
     
@@ -338,13 +421,16 @@ class PointSale(models.Model):
         # Database table name for this model
         db_table = 'point_sales'
     
+    def block(self):
+        # Method that block an point sale when for 3 days
+        if self.blocking_time != None:
+            self.blocking_time = datetime.now() + timedelta(days=3)
+    
+    def unlock(self):
+        # Method that unlock an point sale
+        if self.blocking_time >= timezone.now().date():
+            self.blocking_time = None
+    
     def __str__(self):
         # Returns a string representation of the POS
         return f"{self.account_id.user_id.user_name} - {self.point_sale_number}"
-
-
-class Transaction(models.Model):
-
-    card_id = models.ForeignKey(Card, on_delete=models.DO_NOTHING)
-    point_sale_id = models.ForeignKey(PointSale, on_delete=models.DO_NOTHING)
-    commission = models.FloatField()
