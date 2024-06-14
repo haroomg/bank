@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Físico",
+        "description": "Un punto de venta físico, como una tienda o un kiosco."
+    },
+    {
+        "name": "En línea",
+        "description": "Un punto de venta en línea, como una tienda virtual o una plataforma de comercio electrónico."
+    },
+    {
+        "name": "Móvil",
+        "description": "Un punto de venta móvil, como un dispositivo móvil o una aplicación que permite realizar ventas en cualquier lugar."
+    },
+    {
+        "name": "Temporal",
+        "description": "Un punto de venta temporal, como un stand en un evento o una feria."
+    },
+    {
+        "name": "Permanente",
+        "description": "Un punto de venta permanente, como una tienda establecida en un lugar fijo."
+    }
+]

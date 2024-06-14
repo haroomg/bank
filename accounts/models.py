@@ -4,14 +4,16 @@ from django.utils import timezone
 from dateutil.relativedelta import relativedelta
 from django.contrib.auth.hashers import make_password, check_password
 
+# --------------------------------------------------------------------------------
+# User:
 class TypeUser(models.Model): 
     # Model that represents a type of user in the system.
     
     # Field that stores the type of user name (max 20 characters)
     name = models.CharField(max_length=20, blank=False, null=False, unique=True)
     
-    # Field that stores the type of user description (max 100 characters)
-    description = models.CharField(max_length=100, blank=False, null=False, unique=True)
+    # Field that stores the type of user description (max 255 characters)
+    description = models.CharField(max_length=255, blank=False, null=False, unique=True)
     
     # Field that stores the type of user creation date
     date_create = models.DateTimeField(auto_now_add=True)
@@ -37,8 +39,8 @@ class StatusUser(models.Model):
     # Field that stores the status of user name (max 20 characters)
     name = models.CharField(max_length=20, blank=False, null=False, unique=True)
     
-    # Field that stores the status of user description (max 100 characters)
-    description = models.CharField(max_length=100, blank=False, null=False, unique=True)
+    # Field that stores the status of user description (max 255 characters)
+    description = models.CharField(max_length=255, blank=False, null=False, unique=True)
     
     # Field that stores the status of user creation date
     date_create = models.DateTimeField(auto_now_add=True)
@@ -56,168 +58,6 @@ class StatusUser(models.Model):
     def __str__(self):
         # Method that returns a string representation of the object.
         return self.name  # Returns the status of user name as a string
-
-
-class TypeAccount(models.Model): 
-    # Model that represents a Type of Account in the system.
-    
-    # Field that stores the type of account name (max 20 characters)
-    name = models.CharField(max_length=20, blank=False, null=False, unique=True)
-    
-    # Field that stores the type of account description (max 100 characters)
-    description = models.CharField(max_length=100, blank=False, null=False, unique=True)
-    
-    # Field that stores the type of account creation date
-    date_create = models.DateTimeField(auto_now_add=True)
-    
-    # Field that stores the type of account last update date
-    date_update = models.DateTimeField(auto_now=True)
-    
-    # Field that indicates if the type of account is active (True) or inactive (False)
-    status = models.BooleanField(default=True)
-    
-    class Meta:
-        # Model metadata.
-        db_table = 'type_account'  # Table name in the database
-    
-    def __str__(self):
-        # Method that returns a string representation of the object.
-        return self.name  # Returns the type of account name as a string
-
-
-class StatusAccount(models.Model): 
-    # Model that represents the status of an account in the system.
-    
-    # Field that stores the status name (max 20 characters)
-    name = models.CharField(max_length=20, blank=False, null=False, unique=True)
-    
-    # Field that stores the status description (max 100 characters)
-    description = models.CharField(max_length=100, blank=False, null=False, unique=True)
-    
-    # Field that stores the status creation date
-    date_create = models.DateTimeField(auto_now_add=True)
-    
-    # Field that stores the status last update date
-    date_update = models.DateTimeField(auto_now=True)
-    
-    # Field that indicates if the status is active (True) or inactive (False)
-    status = models.BooleanField(default=True)
-    
-    class Meta:
-        # Model metadata.
-        db_table = 'status_account'  # Table name in the database
-    
-    def __str__(self):
-        # Method that returns a string representation of the object.
-        return self.name  # Returns the status name as a string
-
-
-class TypeAccount(models.Model): 
-    # Model that represents a Type of Account in the system.
-    
-    # Field that stores the type of account name (max 20 characters)
-    name = models.CharField(max_length=20, blank=False, null=False, unique=True)
-    
-    # Field that stores the type of account description (max 100 characters)
-    description = models.CharField(max_length=100, blank=False, null=False, unique=True)
-    
-    # Field that stores the type of account creation date
-    date_create = models.DateTimeField(auto_now_add=True)
-    
-    # Field that stores the type of account last update date
-    date_update = models.DateTimeField(auto_now=True)
-    
-    # Field that indicates if the type of account is active (True) or inactive (False)
-    status = models.BooleanField(default=True)
-    
-    class Meta:
-        # Model metadata.
-        db_table = 'type_account'  # Table name in the database
-    
-    def __str__(self):
-        # Method that returns a string representation of the object.
-        return self.name  # Returns the type of account name as a string
-
-
-class TypeCard(models.Model): 
-    # Model that represents a type of card in the system.
-    
-    # Field that stores the type of card name (max 20 characters)
-    name = models.CharField(max_length=20, blank=False, null=False, unique=True)
-    
-    # Field that stores the type of card description (max 100 characters)
-    description = models.CharField(max_length=100, blank=False, null=False, unique=True)
-    
-    # Field that stores the type of card creation date
-    date_create = models.DateTimeField(auto_now_add=True)
-    
-    # Field that stores the type of card last update date
-    date_update = models.DateTimeField(auto_now=True)
-    
-    # Field that indicates if the type of card is active (True) or inactive (False)
-    status = models.BooleanField(default=True)
-    
-    class Meta:
-        # Model metadata.
-        db_table = 'type_card'  # Table name in the database
-    
-    def __str__(self):
-        # Method that returns a string representation of the object.
-        return self.name  # Returns the type of card name as a string
-
-
-class StatusCard(models.Model): 
-    # Model that represents the status of a card in the system.
-    
-    # Field that stores the status name (max 20 characters)
-    name = models.CharField(max_length=20, blank=False, null=False, unique=True)
-    
-    # Field that stores the status description (max 100 characters)
-    description = models.CharField(max_length=100, blank=False, null=False, unique=True)
-    
-    # Field that stores the status creation date
-    date_create = models.DateTimeField(auto_now_add=True)
-    
-    # Field that stores the status last update date
-    date_update = models.DateTimeField(auto_now=True)
-    
-    # Field that indicates if the status is active (True) or inactive (False)
-    status = models.BooleanField(default=True)
-    
-    class Meta:
-        # Model metadata.
-        db_table = 'tatus_card'  # Table name in the database
-    
-    def __str__(self):
-        # Method that returns a string representation of the object.
-        return self.name  # Returns the status name as a string
-
-
-class StatusPointSale(models.Model): 
-    # Model that represents the status of a point of sale in the system.
-    
-    # Field that stores the status name (max 20 characters)
-    name = models.CharField(max_length=20, blank=False, null=False, unique=True)
-    
-    # Field that stores the status description (max 100 characters)
-    description = models.CharField(max_length=100, blank=False, null=False, unique=True)
-    
-    # Field that stores the status creation date
-    date_create = models.DateTimeField(auto_now_add=True)
-    
-    # Field that stores the status last update date
-    date_update = models.DateTimeField(auto_now=True)
-    
-    # Field that indicates if the status is active (True) or inactive (False)
-    status = models.BooleanField(default=True)
-    
-    class Meta:
-        # Model metadata.
-        db_table = 'status_point_sale'  # Table name in the database
-    
-    def __str__(self):
-        # Method that returns a string representation of the object.
-        return self.name  # Returns the status name as a string
 
 
 class User(models.Model): 
@@ -301,6 +141,61 @@ class User(models.Model):
         # Model metadata.
         db_table = 'users'  # Table name in the database
 
+# --------------------------------------------------------------------------------
+# Account
+class StatusAccount(models.Model): 
+    # Model that represents the status of an account in the system.
+    
+    # Field that stores the status name (max 20 characters)
+    name = models.CharField(max_length=20, blank=False, null=False, unique=True)
+    
+    # Field that stores the status description (max 255 characters)
+    description = models.CharField(max_length=255, blank=False, null=False, unique=True)
+    
+    # Field that stores the status creation date
+    date_create = models.DateTimeField(auto_now_add=True)
+    
+    # Field that stores the status last update date
+    date_update = models.DateTimeField(auto_now=True)
+    
+    # Field that indicates if the status is active (True) or inactive (False)
+    status = models.BooleanField(default=True)
+    
+    class Meta:
+        # Model metadata.
+        db_table = 'status_account'  # Table name in the database
+    
+    def __str__(self):
+        # Method that returns a string representation of the object.
+        return self.name  # Returns the status name as a string
+
+
+class TypeAccount(models.Model): 
+    # Model that represents a Type of Account in the system.
+    
+    # Field that stores the type of account name (max 20 characters)
+    name = models.CharField(max_length=20, blank=False, null=False, unique=True)
+    
+    # Field that stores the type of account description (max 255 characters)
+    description = models.CharField(max_length=255, blank=False, null=False, unique=True)
+    
+    # Field that stores the type of account creation date
+    date_create = models.DateTimeField(auto_now_add=True)
+    
+    # Field that stores the type of account last update date
+    date_update = models.DateTimeField(auto_now=True)
+    
+    # Field that indicates if the type of account is active (True) or inactive (False)
+    status = models.BooleanField(default=True)
+    
+    class Meta:
+        # Model metadata.
+        db_table = 'type_account'  # Table name in the database
+    
+    def __str__(self):
+        # Method that returns a string representation of the object.
+        return self.name  # Returns the type of account name as a string
+
 
 class Account(models.Model): 
     # Represents a bank account associated with a user.
@@ -346,6 +241,62 @@ class Account(models.Model):
     def __str__(self):
         # Returns a string representation of the account
         return f"{self.user_id.user_name} - {self.account_number}"
+
+# --------------------------------------------------------------------------------
+# Card
+
+class TypeCard(models.Model): 
+    # Model that represents a type of card in the system.
+    
+    # Field that stores the type of card name (max 20 characters)
+    name = models.CharField(max_length=20, blank=False, null=False, unique=True)
+    
+    # Field that stores the type of card description (max 255 characters)
+    description = models.CharField(max_length=255, blank=False, null=False, unique=True)
+    
+    # Field that stores the type of card creation date
+    date_create = models.DateTimeField(auto_now_add=True)
+    
+    # Field that stores the type of card last update date
+    date_update = models.DateTimeField(auto_now=True)
+    
+    # Field that indicates if the type of card is active (True) or inactive (False)
+    status = models.BooleanField(default=True)
+    
+    class Meta:
+        # Model metadata.
+        db_table = 'type_card'  # Table name in the database
+    
+    def __str__(self):
+        # Method that returns a string representation of the object.
+        return self.name  # Returns the type of card name as a string
+
+
+class StatusCard(models.Model): 
+    # Model that represents the status of a card in the system.
+    
+    # Field that stores the status name (max 20 characters)
+    name = models.CharField(max_length=20, blank=False, null=False, unique=True)
+    
+    # Field that stores the status description (max 255 characters)
+    description = models.CharField(max_length=255, blank=False, null=False, unique=True)
+    
+    # Field that stores the status creation date
+    date_create = models.DateTimeField(auto_now_add=True)
+    
+    # Field that stores the status last update date
+    date_update = models.DateTimeField(auto_now=True)
+    
+    # Field that indicates if the status is active (True) or inactive (False)
+    status = models.BooleanField(default=True)
+    
+    class Meta:
+        # Model metadata.
+        db_table = 'tatus_card'  # Table name in the database
+    
+    def __str__(self):
+        # Method that returns a string representation of the object.
+        return self.name  # Returns the status name as a string
 
 
 class Card(models.Model): 
@@ -395,6 +346,62 @@ class Card(models.Model):
         # Returns a string representation of the account
         return f"{self.account_id.user_id.user_name} - {self.account_number}"
 
+# --------------------------------------------------------------------------------
+# POS
+
+class TypePos(models.Model): 
+    # Model that represents a type of point sale in the system.
+    
+    # Field that stores the type of point sale name (max 20 characters)
+    name = models.CharField(max_length=20, blank=False, null=False, unique=True)
+    
+    # Field that stores the type of point sale description (max 255 characters)
+    description = models.CharField(max_length=255, blank=False, null=False, unique=True)
+    
+    # Field that stores the type of point sale creation date
+    date_create = models.DateTimeField(auto_now_add=True)
+    
+    # Field that stores the type of point sale last update date
+    date_update = models.DateTimeField(auto_now=True)
+    
+    # Field that indicates if the type of point sale is active (True) or inactive (False)
+    status = models.BooleanField(default=True)
+    
+    class Meta:
+        # Model metadata.
+        db_table = 'type_'  # Table name in the database
+    
+    def __str__(self):
+        # Method that returns a string representation of the object.
+        return self.name  # Returns the type of card name as a string
+
+
+class StatusPos(models.Model): 
+    # Model that represents the status of a point of sale in the system.
+    
+    # Field that stores the status name (max 20 characters)
+    name = models.CharField(max_length=20, blank=False, null=False, unique=True)
+    
+    # Field that stores the status description (max 255 characters)
+    description = models.CharField(max_length=255, blank=False, null=False, unique=True)
+    
+    # Field that stores the status creation date
+    date_create = models.DateTimeField(auto_now_add=True)
+    
+    # Field that stores the status last update date
+    date_update = models.DateTimeField(auto_now=True)
+    
+    # Field that indicates if the status is active (True) or inactive (False)
+    status = models.BooleanField(default=True)
+    
+    class Meta:
+        # Model metadata.
+        db_table = 'status_point_sale'  # Table name in the database
+    
+    def __str__(self):
+        # Method that returns a string representation of the object.
+        return self.name  # Returns the status name as a string
+
 
 class PointSale(models.Model): 
     # Represents a point of sale (POS) associated with an account.
@@ -402,8 +409,11 @@ class PointSale(models.Model):
     # Foreign key referencing the account that this POS belongs to
     account_id = models.ForeignKey(Account, on_delete=models.DO_NOTHING)
     
+    # Foreign key referencing the type of POS (e.g. credit, debit, etc.)
+    type_id = models.ForeignKey(TypePos, on_delete=models.DO_NOTHING)
+    
     # Foreign key referencing the status of the POS (e.g. active, inactive, etc.)
-    status_id = models.ForeignKey(StatusPointSale, on_delete=models.DO_NOTHING)
+    status_id = models.ForeignKey(StatusPos, on_delete=models.DO_NOTHING)
     
     # Unique identifier for the POS
     point_sale_number = models.CharField(max_length=20, blank=False, null=False, unique=True)
@@ -434,3 +444,5 @@ class PointSale(models.Model):
     def __str__(self):
         # Returns a string representation of the POS
         return f"{self.account_id.user_id.user_name} - {self.point_sale_number}"
+
+# --------------------------------------------------------------------------------

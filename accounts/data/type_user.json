@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Cliente minorista",
+        "description": "Un usuario individual que tiene una cuenta personal en el banco y realiza operaciones bancarias básicas, como depósitos, retiros y transferencias"
+    },
+    {
+        "name": "Cliente empresarial",
+        "description": "Una empresa o organización que tiene una cuenta comercial en el banco y realiza operaciones bancarias más complejas, como pagos a proveedores, gestión de tesorería y servicios de banca de inversión"
+    },
+    {
+        "name": "Cliente premium",
+        "description": "Un usuario que paga por servicios adicionales y privilegios, como acceso a salas VIP, servicios de concierge y asesoramiento financiero personalizado"
+    },
+    {
+        "name": "Cliente de banca privada",
+        "description": "Un usuario con un alto patrimonio neto que recibe servicios personalizados y especializados, como gestión de carteras, planificación fiscal y asesoramiento en inversiones"
+    },
+    {
+        "name": "Corredor de bolsa",
+        "description": "Un usuario con un alto patrimonio neto que recibe servicios personalizados y especializados, como gestión de carteras, planificación fiscal y asesoramiento en inversiones"
+    },
+    {
+        "name": "Asesor financiero",
+        "description": "Un profesional que realiza operaciones de compra y venta de valores en nombre de los clientes del banco"
+    },
+    {
+        "name": "Gerente de cuenta",
+        "description": "Un profesional que gestiona las relaciones con los clientes del banco y brinda servicios personalizados y especializados"
+    },
+    {
+        "name": "Empleado del banco",
+        "description": "Un empleado del banco que tiene acceso a sistemas y datos internos y realiza tareas administrativas y operativas"
+    },
+    {
+        "name": "Administrador de sistemas",
+        "description": "Un profesional que gestiona los sistemas informáticos y de telecomunicaciones del banco y garantiza su funcionamiento y seguridad"
+    },
+    {
+        "name": "Auditor",
+        "description": "Un profesional que realiza auditorías internas y externas del banco para garantizar su cumplimiento normativo y su integridad financiera"
+    }
+]

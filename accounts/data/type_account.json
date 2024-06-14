@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Cuenta Corriente",
+        "description": "Una cuenta para realizar operaciones diarias, como depósitos, retiros, transferencias y pagos de facturas"
+    },
+    {
+        "name": "Cuenta de ahorro",
+        "description": "Una cuenta para ahorrar dinero y ganar intereses, con restricciones para realizar retiros frecuentes."
+    },
+    {
+        "name": "Cuenta de inversión",
+        "description": "Una cuenta para invertir en activos financieros, como acciones, bonos o fondos mutuos"
+    },
+    {
+        "name": "Cuenta de crédito",
+        "description": "Una cuenta que permite al usuario solicitar préstamos o líneas de crédito para financiar compras o proyectos."
+    },
+    {
+        "name": "Cuenta de pago",
+        "description": "Una cuenta para realizar pagos en línea o en persona, como una cuenta de débito o crédito"
+    },
+    {
+        "name": "Cuenta de tarjeta de crédito",
+        "description": "Una cuenta asociada a una tarjeta de crédito, que permite al usuario realizar compras y pagos en línea o en persona"
+    },
+    {
+        "name": "Cuenta de depósito a plazo",
+        "description": "Una cuenta que permite al usuario depositar dinero por un período determinado y ganar intereses más altos que una cuenta de ahorro tradicional"
+    },
+    {
+        "name": "Cuenta de mercado de dinero",
+        "description": "Una cuenta que permite al usuario invertir en instrumentos financieros de corto plazo, como certificados de depósito o letras de cambio"
+    },
+    {
+        "name": "Cuenta de jubilación",
+        "description": "Una cuenta para ahorrar para la jubilación, con beneficios fiscales y restricciones para realizar retiros antes de la edad de jubilación"
+    },
+    {
+        "name": "Cuenta de empresa",
+        "description": "Una cuenta para empresas y organizaciones, que permite realizar operaciones bancarias más complejas, como pagos a proveedores y gestión de tesorería"
+    }
+]

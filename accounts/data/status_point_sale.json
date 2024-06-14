@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Activo",
+        "description": "El punto de venta está activo y listo para realizar ventas."
+    },
+    {
+        "name": "Inactivo",
+        "description": "El punto de venta está inactivo y no se pueden realizar ventas."
+    },
+    {
+        "name": "En mantenimiento",
+        "description": "El punto de venta está en mantenimiento y no se pueden realizar ventas temporalmente."
+    },
+    {
+        "name": "En configuración",
+        "description": "El punto de venta está en configuración y no se pueden realizar ventas hasta que se complete la configuración."
+    },
+    {
+        "name": "En prueba",
+        "description": "El punto de venta está en prueba y se están realizando pruebas para asegurarse de que funcione correctamente."
+    },
+    {
+        "name": "Desactivado",
+        "description": "El punto de venta ha sido desactivado por el propietario o administrador."
+    },
+    {
+        "name": "En espera",
+        "description": "El punto de venta está en espera de activación o reactivación después de una solicitud del propietario o administrador."
+    },
+    {
+        "name": "Error",
+        "description": "El punto de venta tiene un error técnico o de sistema que impide realizar ventas."
+    },
+    {
+        "name": "En actualización",
+        "description": "El punto de venta está en actualización y no se pueden realizar ventas hasta que se complete la actualización."
+    },
+    {
+        "name": "Cerrado",
+        "description": "El punto de venta ha sido cerrado permanentemente y no se pueden realizar ventas."
+    }
+]
