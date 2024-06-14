@@ -1,6 +1,6 @@
 from django.db import models
-from datetime import datetime, timedelta
 from django.utils import timezone
+from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 from django.contrib.auth.hashers import make_password, check_password
 
@@ -292,7 +292,7 @@ class StatusCard(models.Model):
     
     class Meta:
         # Model metadata.
-        db_table = 'tatus_card'  # Table name in the database
+        db_table = 'status_card'  # Table name in the database
     
     def __str__(self):
         # Method that returns a string representation of the object.
@@ -369,7 +369,7 @@ class TypePos(models.Model):
     
     class Meta:
         # Model metadata.
-        db_table = 'type_'  # Table name in the database
+        db_table = 'type_pos'  # Table name in the database
     
     def __str__(self):
         # Method that returns a string representation of the object.
@@ -396,14 +396,14 @@ class StatusPos(models.Model):
     
     class Meta:
         # Model metadata.
-        db_table = 'status_point_sale'  # Table name in the database
+        db_table = 'status_pos'  # Table name in the database
     
     def __str__(self):
         # Method that returns a string representation of the object.
         return self.name  # Returns the status name as a string
 
 
-class PointSale(models.Model): 
+class Pos(models.Model): 
     # Represents a point of sale (POS) associated with an account.
 
     # Foreign key referencing the account that this POS belongs to
@@ -429,7 +429,7 @@ class PointSale(models.Model):
     
     class Meta: 
         # Database table name for this model
-        db_table = 'point_sales'
+        db_table = 'pos'
     
     def block(self):
         # Method that block an point sale when for 3 days
