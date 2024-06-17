@@ -37,7 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts.apps.AccountsConfig'
+
+    # own apps
+    'customers.apps.CustomersConfig',
+    'staff.apps.StaffConfig',
+    'services.apps.ServicesConfig',
+    'transactions.apps.TransactionsConfig'
+
 ]
 
 MIDDLEWARE = [
@@ -122,3 +128,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# personal settings
+SESSION_COOKIE_AGE = 1800  # 30 min
+# AUTH_USER_MODEL = 'staff.User'

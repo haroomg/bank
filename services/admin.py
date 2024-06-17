@@ -1,30 +1,20 @@
 from django.contrib import admin
 from .models import (
-    # user
-    StatusUser,
-    TypeUser,
-    User,
-    
-    # account
-    StatusAccount,
-    TypeAccount,
-    Account,
-    
-    # card
-    StatusCard,
-    TypeCard, 
-    Card,
-    
-    # pos
-    StatusPos,
-    TypePos,
-    Pos
+  # account
+  StatusAccount,
+  TypeAccount,
+  Account,
+  
+  # card
+  StatusCard,
+  TypeCard, 
+  Card,
+  
+  # pos
+  StatusPos,
+  TypePos,
+  Pos
 )
-
-# uses
-admin.site.register(StatusUser)
-admin.site.register(TypeUser)
-admin.site.register(User)
 
 # account
 admin.site.register(StatusAccount)
