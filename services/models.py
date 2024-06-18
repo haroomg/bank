@@ -72,13 +72,13 @@ class Account(models.Model):
     # Represents a bank account associated with a user.
     
     # Foreign key referencing the user who owns this account
-    user_id = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    user_id = models.ForeignKey(User, db_column='user_id', on_delete=models.DO_NOTHING)
     
     # Foreign key referencing the type of account (e.g. checking, savings, etc.)
-    type_id = models.ForeignKey(TypeAccount, on_delete=models.DO_NOTHING)
+    type_id = models.ForeignKey(TypeAccount, db_column='type_id', on_delete=models.DO_NOTHING)
     
     # Foreign key referencing the status of the account (e.g. active, inactive, etc.)
-    status_id = models.ForeignKey(StatusAccount, on_delete=models.DO_NOTHING)
+    status_id = models.ForeignKey(StatusAccount, db_column='status_id', on_delete=models.DO_NOTHING)
     
     # Unique account number assigned to the account
     account_number = models.CharField(max_length=50, blank=False, null=False)
@@ -180,13 +180,13 @@ class Card(models.Model):
     # Represents a bank card associated with an account.
     
     # Foreign key referencing the account that this card belongs to
-    account_id = models.ForeignKey(Account, on_delete=models.DO_NOTHING)
+    account_id = models.ForeignKey(Account, db_column='account_id', on_delete=models.DO_NOTHING)
     
     # Foreign key referencing the type of card (e.g. credit, debit, etc.)
-    type_id = models.ForeignKey(TypeCard, on_delete=models.DO_NOTHING)
+    type_id = models.ForeignKey(TypeCard, db_column='type_id', on_delete=models.DO_NOTHING)
     
     # Foreign key referencing the status of the card (e.g. active, inactive, etc.)
-    status_id = models.ForeignKey(StatusCard, on_delete=models.DO_NOTHING)
+    status_id = models.ForeignKey(StatusCard, db_column='status_id', on_delete=models.DO_NOTHING)
     
     # Unique card number assigned to the card
     card_number = models.CharField(max_length=20, blank=False, null=False, unique=True)
@@ -294,13 +294,13 @@ class Pos(models.Model):
     # Represents a point of sale (POS) associated with an account.
 
     # Foreign key referencing the account that this POS belongs to
-    account_id = models.ForeignKey(Account, on_delete=models.DO_NOTHING)
+    account_id = models.ForeignKey(Account, db_column='account_id', on_delete=models.DO_NOTHING)
     
     # Foreign key referencing the type of POS (e.g. credit, debit, etc.)
-    type_id = models.ForeignKey(TypePos, on_delete=models.DO_NOTHING)
+    type_id = models.ForeignKey(TypePos, db_column='type_id', on_delete=models.DO_NOTHING)
     
     # Foreign key referencing the status of the POS (e.g. active, inactive, etc.)
-    status_id = models.ForeignKey(StatusPos, on_delete=models.DO_NOTHING)
+    status_id = models.ForeignKey(StatusPos, db_column='status_id', on_delete=models.DO_NOTHING)
     
     # Unique identifier for the POS
     point_sale_number = models.CharField(max_length=20, blank=False, null=False, unique=True)

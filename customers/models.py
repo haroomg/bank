@@ -69,10 +69,10 @@ class User(models.Model):
     # Model that represents a user in the system.
     
     # Field that stores the user's type (foreign key to the TypeUser model)
-    type_id = models.ForeignKey(TypeUser, on_delete=models.DO_NOTHING)
+    type_id = models.ForeignKey(TypeUser, db_column= 'type_id', on_delete=models.DO_NOTHING)
     
     # Foreign key referencing the status of the user (e.g. active, inactive, etc.)
-    status_id = models.ForeignKey(StatusUser, on_delete=models.DO_NOTHING)
+    status_id = models.ForeignKey(StatusUser, db_column= 'status_id', on_delete=models.DO_NOTHING)
     
     # Field that stores the user's username (max 50 characters, unique)
     user_name = models.CharField(max_length=50, blank=False, null=False, unique=True)
@@ -136,10 +136,15 @@ class User(models.Model):
         if self.blocking_time >= timezone.now().date():
             self.blocking_time = None
     
+    def save(self, *args, **kwargs):
+        
+        self.set_password(self.password)
+        super(User, self).save(*args, **kwargs)
+    
     def __str__(self):
         # Method that returns a string representation of the object.
         return self.user_name  # Returns the user's username as a string
-    
+        
     class Meta:
         # Model metadata.
         db_table = 'customers_users'  # Table name in the database
