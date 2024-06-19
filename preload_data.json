@@ -1,0 +1,827 @@
+[
+    {
+        "model": "customers.StatusUser",
+        "pk":1,
+        "fields": {
+            "name": "Active",
+            "description": "The user has normal access to their account and can perform operations without restrictions.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "customers.StatusUser",
+        "pk":2,
+        "fields": {
+            "name": "Blocked",
+            "description": "The user has attempted to access their account with incorrect credentials multiple times and has been temporarily blocked to prevent brute-force attacks.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "customers.StatusUser",
+        "pk":3,
+        "fields": {
+            "name": "Disabled",
+            "description": "The user has requested to disable their account or has violated the bank's terms and conditions, resulting in their access being revoked.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "customers.StatusUser",
+        "pk":4,
+        "fields": {
+            "name": "Pending Verification",
+            "description": "The user has created a new account and needs to verify their identity or provide additional information to activate their account.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "customers.StatusUser",
+        "pk":5,
+        "fields": {
+            "name": "Verified",
+            "description": "The user has completed the verification process and their account is active.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "customers.StatusUser",
+        "pk":6,
+        "fields": {
+            "name": "Suspended",
+            "description": "The user has violated the bank's security policies or has performed suspicious activities, resulting in their account being temporarily suspended.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "customers.StatusUser",
+        "pk":7,
+        "fields": {
+            "name": "Cancelled",
+            "description": "The user has requested to cancel their account and no longer has access to it.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "customers.StatusUser",
+        "pk":8,
+        "fields": {
+            "name": "Inactive",
+            "description": "The user has not accessed their account for an extended period of time and their account has been marked as inactive.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "customers.StatusUser",
+        "pk":9,
+        "fields": {
+            "name": "Under Review",
+            "description": "The user has made a password change request or has updated their personal information, and their account is under review to verify the authenticity of the request.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "customers.StatusUser",
+        "pk":10,
+        "fields": {
+            "name": "Lockout",
+            "description": "The user has attempted to access their account with incorrect credentials multiple times and has been permanently blocked to protect their account from malicious attacks.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+
+
+    
+    {
+        "model": "customers.TypeUser",
+        "pk":1,
+        "fields": {
+            "name": "Retail customers",
+            "description": "An individual user who has a personal account at the bank and performs basic banking operations, such as deposits, withdrawals, and transfers.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "customers.TypeUser",
+        "pk":2,
+        "fields": {
+            "name": "Business customers",
+            "description": "A company or organization that has a commercial account at the bank and performs more complex banking operations, such as paying suppliers, treasury management, and investment banking services.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "customers.TypeUser",
+        "pk":3,
+        "fields": {
+            "name": "Premium customers",
+            "description": "A user who pays for additional services and privileges, such as access to VIP lounges, concierge services, and personalized financial advice.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "customers.TypeUser",
+        "pk":4,
+        "fields": {
+            "name": "Private Banking customers",
+            "description": "A high net worth individual who receives personalized and specialized services, such as portfolio management, tax planning, and investment advice.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "customers.TypeUser",
+        "pk":5,
+        "fields": {
+            "name": "Stockbroker",
+            "description": "A high net worth individual who receives personalized and specialized services, such as portfolio management, tax planning, and investment advice.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "customers.TypeUser",
+        "pk":6,
+        "fields": {
+            "name": "Financial Advisor",
+            "description": "A professional who buys and sells securities on behalf of the bank's clients.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "customers.TypeUser",
+        "pk":7,
+        "fields": {
+            "name": "Account Manager",
+            "description": "A professional who manages relationships with the bank's clients and provides personalized and specialized services.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "customers.TypeUser",
+        "pk":8,
+        "fields": {
+            "name": "Bank Employee",
+            "description": "A bank employee who has access to internal systems and data and performs administrative and operational tasks.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "customers.TypeUser",
+        "pk":9,
+        "fields": {
+            "name": "System Administrator",
+            "description": "A professional who manages the bank's computer systems and telecommunications and ensures their operation and security.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "customers.TypeUser",
+        "pk":10,
+        "fields": {
+            "name": "Auditor",
+            "description": "A professional who performs internal and external audits of the bank to ensure its regulatory compliance and financial integrity.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+
+
+    {   
+        "model": "services.StatusAccount",
+        "pk": 1,
+        "fields": {
+            "name": "Active",
+            "description": "The account is active and ready to perform operations.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusAccount",
+        "pk": 2,
+        "fields": {
+            "name": "Inactive",
+            "description": "The account is inactive and cannot perform operations until it is reactivated.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusAccount",
+        "pk": 3,
+        "fields": {
+            "name": "Blocked",
+            "description": "The account is temporarily blocked due to suspected fraud or suspicious activity.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusAccount",
+        "pk": 4,
+        "fields": {
+            "name": "Frozen",
+            "description": "The account is frozen by court order or due to a dispute between the bank and the customer.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusAccount",
+        "pk": 5,
+        "fields": {
+            "name": "Closed",
+            "description": "The account has been closed by the customer or the bank due to a violation of the terms and conditions.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusAccount",
+        "pk": 6,
+        "fields": {
+            "name": "Under Review",
+            "description": "The account is being reviewed by the bank due to a request for information change or fraud investigation.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusAccount",
+        "pk": 7,
+        "fields": {
+            "name": "On Hold",
+            "description": "The account is on hold for activation or reactivation after a customer request.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusAccount",
+        "pk": 8,
+        "fields": {
+            "name": "Suspended",
+            "description": "The account is temporarily suspended due to non-payment or a violation of the terms and conditions.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusAccount",
+        "pk": 9,
+        "fields": {
+            "name": "Dormant",
+            "description": "The account has been inactive for a prolonged period of time and is considered 'dormant'.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusAccount",
+        "pk": 10,
+        "fields": {
+            "name": "In Opening Process",
+            "description": "The account is in the process of opening and is not yet ready for operations.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusAccount",
+        "pk": 11,
+        "fields": {
+            "name": "In Closing Process",
+            "description": "The account is in the process of closing and cannot perform operations until the process is complete.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusAccount",
+        "pk": 12,
+        "fields": {
+            "name": "Error",
+            "description": "The account has a technical or system error that prevents operations.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusAccount",
+        "pk": 13,
+        "fields": {
+            "name": "Pending Verification",
+            "description": "The account is pending verification of the customer's identity or provided information.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusAccount",
+        "pk": 14,
+        "fields": {
+            "name": "Limited",
+            "description": "The account has temporary or permanent limits for performing operations due to a customer request or bank decision.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusAccount",
+        "pk": 15,
+        "fields": {
+            "name": "In Dispute",
+            "description": "The account is in dispute between the bank and the customer due to a transaction or service issue.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+
+
+    {
+        "model": "services.TypeAccount",
+        "pk": 1,
+        "fields": {
+            "name": "Checking Account",
+            "description": "An account for performing daily operations, such as deposits, withdrawals, transfers, and bill payments.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.TypeAccount",
+        "pk": 2,
+        "fields": {
+            "name": "Savings Account",
+            "description": "An account for saving money and earning interest, with restrictions on frequent withdrawals.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.TypeAccount",
+        "pk": 3,
+        "fields": {
+            "name": "Investment Account",
+            "description": "An account for investing in financial assets, such as stocks, bonds, or mutual funds.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.TypeAccount",
+        "pk": 4,
+        "fields": {
+            "name": "Credit Account",
+            "description": "An account that allows the user to request loans or credit lines for financing purchases or projects.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.TypeAccount",
+        "pk": 5,
+        "fields": {
+            "name": "Payment Account",
+            "description": "An account for making online or in-person payments, such as a debit or credit account.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.TypeAccount",
+        "pk": 6,
+        "fields": {
+            "name": "Credit Card Account",
+            "description": "An account associated with a credit card, that allows the user to make purchases and payments online or in person.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.TypeAccount",
+        "pk": 7,
+        "fields": {
+            "name": "Time Deposit Account",
+            "description": "An account that allows the user to deposit money for a determined period of time and earn higher interest than a traditional savings account.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.TypeAccount",
+        "pk": 8,
+        "fields": {
+            "name": "Money Market Account",
+            "description": "An account that allows the user to invest in short-term financial instruments, such as certificates of deposit or bills of exchange.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.TypeAccount",
+        "pk": 9,
+        "fields": {
+            "name": "Retirement Account",
+            "description": "An account for saving for retirement, with tax benefits and restrictions on withdrawals before retirement age.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.TypeAccount",
+        "pk": 10,
+        "fields": {
+            "name": "Business Account",
+            "description": "An account for businesses and organizations, that allows for more complex banking operations, such as payments to suppliers and treasury management.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+
+
+    {
+        "model": "services.StatusPos",
+        "pk": 1,
+        "fields": {
+            "name": "Active",
+            "description": "The point of sale is active and ready to process sales.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusPos",
+        "pk": 2,
+        "fields": {
+            "name": "Inactive",
+            "description": "The point of sale is inactive and sales cannot be processed.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusPos",
+        "pk": 3,
+        "fields": {
+            "name": "Under Maintenance",
+            "description": "The point of sale is under maintenance and sales cannot be processed temporarily.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusPos",
+        "pk": 4,
+        "fields": {
+            "name": "Configuring",
+            "description": "The point of sale is being configured and sales cannot be processed until configuration is complete.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusPos",
+        "pk": 5,
+        "fields": {
+            "name": "Testing",
+            "description": "The point of sale is being tested to ensure it is functioning correctly.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusPos",
+        "pk": 6,
+        "fields": {
+            "name": "Disabled",
+            "description": "The point of sale has been disabled by the owner or administrator.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusPos",
+        "pk": 7,
+        "fields": {
+            "name": "Pending",
+            "description": "The point of sale is pending activation or reactivation after a request from the owner or administrator.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusPos",
+        "pk": 8,
+        "fields": {
+            "name": "Error",
+            "description": "The point of sale has a technical or system error that prevents sales from being processed.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusPos",
+        "pk": 9,
+        "fields": {
+            "name": "Updating",
+            "description": "The point of sale is being updated and sales cannot be processed until the update is complete.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusPos",
+        "pk": 10,
+        "fields": {
+            "name": "Closed",
+            "description": "The point of sale has been permanently closed and sales cannot be processed.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+
+
+    {
+        "model": "services.TypePos",
+        "pk": 1,
+        "fields": {
+            "name": "Physical",
+            "description": "A physical point of sale, such as a store or a kiosk.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.TypePos",
+        "pk": 2,
+        "fields": {
+            "name": "Online",
+            "description": "An online point of sale, such as a virtual store or an e-commerce platform.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.TypePos",
+        "pk": 3,
+        "fields": {
+            "name": "Mobile",
+            "description": "A mobile point of sale, such as a mobile device or an app that allows sales to be made anywhere.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.TypePos",
+        "pk": 4,
+        "fields": {
+            "name": "Temporary",
+            "description": "A temporary point of sale, such as a stand at an event or a fair.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.TypePos",
+        "pk": 5,
+        "fields": {
+            "name": "Permanent",
+            "description": "A permanent point of sale, such as an established store in a fixed location.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+
+
+    {
+        "model": "services.StatusCard",
+        "pk": 1,
+        "fields": {
+            "name": "Active",
+            "description": "La tarjeta está activa y lista para ser utilizada.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusCard",
+        "pk": 2,
+        "fields": {
+            "name": "Inactive",
+            "description": "La tarjeta está inactiva y no se puede utilizar.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusCard",
+        "pk": 3,
+        "fields": {
+            "name": "Pending",
+            "description": "La tarjeta está pendiente de activación o reactivación después de una solicitud del titular.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusCard",
+        "pk": 4,
+        "fields": {
+            "name": "Blocked",
+            "description": "La tarjeta está bloqueada temporalmente debido a una sospecha de fraude o actividad sospechosa.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusCard",
+        "pk": 5,
+        "fields": {
+            "name": "Lost/Stolen",
+            "description": "La tarjeta ha sido reportada como perdida o robada y no se puede utilizar.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusCard",
+        "pk": 6,
+        "fields": {
+            "name": "Expired",
+            "description": "La tarjeta ha caducado y no se puede utilizar.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusCard",
+        "pk": 7,
+        "fields": {
+            "name": "Cancelled",
+            "description": "La tarjeta ha sido cancelada por el titular o el banco.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusCard",
+        "pk": 8,
+        "fields": {
+            "name": "Suspended",
+            "description": "La tarjeta está suspendida temporalmente debido a una falta de pago o actividad sospechosa.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.StatusCard",
+        "pk": 9,
+        "fields": {
+            "name": "Under Review",
+            "description": "La tarjeta está siendo revisada por el banco debido a una sospecha de fraude o actividad sospechosa.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+
+
+    {
+        "model": "services.TypeCard",
+        "pk": 1,
+        "fields": {
+            "name": "Credit Card",
+            "description": "Tarjeta de crédito que permite al titular realizar compras y pagar luego.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.TypeCard",
+        "pk": 2,
+        "fields": {
+            "name": "Debit Card",
+            "description": "Tarjeta de débito que retira fondos directamente de la cuenta del titular.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.TypeCard",
+        "pk": 3,
+        "fields": {
+            "name": "Prepaid Card",
+            "description": "Tarjeta prepaga que tiene un saldo predeterminado y se puede recargar.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.TypeCard",
+        "pk": 4,
+        "fields": {
+            "name": "Virtual Card",
+            "description": "Tarjeta virtual que no tiene una forma física y se utiliza solo para transacciones en línea.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.TypeCard",
+        "pk": 5,
+        "fields": {
+            "name": "Business Card",
+            "description": "Tarjeta de crédito o débito para uso empresarial.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.TypeCard",
+        "pk": 6,
+        "fields": {
+            "name": "Secured Card",
+            "description": "Tarjeta de crédito que requiere un depósito de seguridad para garantizar el pago.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.TypeCard",
+        "pk": 7,
+        "fields": {
+            "name": "Rewards Card",
+            "description": "Tarjeta de crédito que ofrece recompensas o puntos por compras realizadas.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.TypeCard",
+        "pk": 8,
+        "fields": {
+            "name": "Cashback Card",
+            "description": "Tarjeta de crédito que ofrece un porcentaje de devolución de dinero por compras realizadas.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.TypeCard",
+        "pk": 9,
+        "fields": {
+            "name": "Charge Card",
+            "description": "Tarjeta de crédito que requiere que el titular pague el saldo completo cada mes.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.TypeCard",
+        "pk": 10,
+        "fields": {
+            "name": "Student Card",
+            "description": "Tarjeta de crédito diseñada específicamente para estudiantes.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.TypeCard",
+        "pk": 11,
+        "fields": {
+            "name": "Travel Card",
+            "description": "Tarjeta de crédito o débito diseñada específicamente para viajes.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    },
+    {
+        "model": "services.TypeCard",
+        "pk": 12,
+        "fields": {
+            "name": "Gift Card",
+            "description": "Tarjeta prepaga que se puede utilizar como regalo.",
+            "date_create": "2024-06-19 00:00:00",
+            "date_update": "2024-06-19 00:00:00"
+        }
+    }
+]

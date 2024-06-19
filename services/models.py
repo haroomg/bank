@@ -17,7 +17,7 @@ class StatusAccount(models.Model):
     name = models.CharField(max_length=20, blank=False, null=False, unique=True)
     
     # Field that stores the status description (max 255 characters)
-    description = models.CharField(max_length=255, blank=False, null=False, unique=True)
+    description = models.CharField(max_length=512, blank=False, null=False)
     
     # Field that stores the status creation date
     date_create = models.DateTimeField(auto_now_add=True)
@@ -46,7 +46,7 @@ class TypeAccount(models.Model):
     name = models.CharField(max_length=20, blank=False, null=False, unique=True)
     
     # Field that stores the type of account description (max 255 characters)
-    description = models.CharField(max_length=255, blank=False, null=False, unique=True)
+    description = models.CharField(max_length=512, blank=False, null=False)
     
     # Field that stores the type of account creation date
     date_create = models.DateTimeField(auto_now_add=True)
@@ -125,7 +125,7 @@ class TypeCard(models.Model):
     name = models.CharField(max_length=20, blank=False, null=False, unique=True)
     
     # Field that stores the type of card description (max 255 characters)
-    description = models.CharField(max_length=255, blank=False, null=False, unique=True)
+    description = models.CharField(max_length=512, blank=False, null=False)
     
     # Field that stores the type of card creation date
     date_create = models.DateTimeField(auto_now_add=True)
@@ -154,7 +154,7 @@ class StatusCard(models.Model):
     name = models.CharField(max_length=20, blank=False, null=False, unique=True)
     
     # Field that stores the status description (max 255 characters)
-    description = models.CharField(max_length=255, blank=False, null=False, unique=True)
+    description = models.CharField(max_length=512, blank=False, null=False)
     
     # Field that stores the status creation date
     date_create = models.DateTimeField(auto_now_add=True)
@@ -239,7 +239,7 @@ class TypePos(models.Model):
     name = models.CharField(max_length=20, blank=False, null=False, unique=True)
     
     # Field that stores the type of point sale description (max 255 characters)
-    description = models.CharField(max_length=255, blank=False, null=False, unique=True)
+    description = models.CharField(max_length=512, blank=False, null=False)
     
     # Field that stores the type of point sale creation date
     date_create = models.DateTimeField(auto_now_add=True)
@@ -268,7 +268,7 @@ class StatusPos(models.Model):
     name = models.CharField(max_length=20, blank=False, null=False, unique=True)
     
     # Field that stores the status description (max 255 characters)
-    description = models.CharField(max_length=255, blank=False, null=False, unique=True)
+    description = models.CharField(max_length=512, blank=False, null=False)
     
     # Field that stores the status creation date
     date_create = models.DateTimeField(auto_now_add=True)

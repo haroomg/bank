@@ -14,7 +14,7 @@ class TypeUser(models.Model):
     name = models.CharField(max_length=20, blank=False, null=False, unique=True)
     
     # Field that stores the type of user description (max 255 characters)
-    description = models.CharField(max_length=255, blank=False, null=False, unique=True)
+    description = models.CharField(max_length=512, blank=False, null=False)
     
     # Field that stores the type of user creation date
     date_create = models.DateTimeField(auto_now_add=True)
@@ -43,7 +43,7 @@ class StatusUser(models.Model):
     name = models.CharField(max_length=20, blank=False, null=False, unique=True)
     
     # Field that stores the status of user description (max 255 characters)
-    description = models.CharField(max_length=255, blank=False, null=False, unique=True)
+    description = models.CharField(max_length=512, blank=False, null=False)
     
     # Field that stores the status of user creation date
     date_create = models.DateTimeField(auto_now_add=True)
@@ -113,7 +113,7 @@ class User(models.Model):
     # Field that stores the user's password expiration date (6 months from creation)
     date_due_password = models.DateTimeField(default=datetime.now() + relativedelta(months=6))
     
-    
+    # password
     def set_password(self, raw_password):
         # Method that sets the user's password.
         self.password = make_password(raw_password)
@@ -125,7 +125,9 @@ class User(models.Model):
     def is_password_expired(self):
         # Method that checks if the user's password has expired.        
         return self.date_due_password >= timezone.now().date()
+    # ---
     
+    # user lock and unlock
     def block(self):
         # Method that block an user when for 3 days
         if self.blocking_time != None:
@@ -135,6 +137,7 @@ class User(models.Model):
         # Method that unlock an user
         if self.blocking_time >= timezone.now().date():
             self.blocking_time = None
+    # ---
     
     def save(self, *args, **kwargs):
         
